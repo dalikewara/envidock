@@ -25,19 +25,19 @@ build: up ## Build all environment services
 destroy: down clear-mongo clear-mysql clear-postgres clear-redis clear-rabbitmq ## Destroy all environment services. This will also clear all volumes & data
 
 up: ## Create & run all environment services
-	@docker-compose up -d ${on}
+	@docker compose up -d ${on}
 
 down: ## Remove all environment services, but leave all volumes & data untouched
-	@docker-compose down
+	@docker compose down
 
 stop: ## Stop all environment services
-	@docker-compose stop ${on}
+	@docker compose stop ${on}
 
 start: ## Start all environment services
-	@docker-compose start ${on}
+	@docker compose start ${on}
 
 restart: ## Restart all environment services
-	@docker-compose restart ${on}
+	@docker compose restart ${on}
 
 clear-mongo: ## Clear Mongo volume & data
 	@docker volume rm envidock_mongo-data
